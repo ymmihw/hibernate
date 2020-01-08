@@ -10,7 +10,7 @@ import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ParameterMessageInterpolaterIntegrationTest {
+public class ParameterMessageInterpolatorIntegrationTest {
 
   private static Validator validator;
 
