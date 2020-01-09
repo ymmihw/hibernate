@@ -28,5 +28,6 @@
  </dependencies>
  <modules>
   <module>hibernate-batch</module>
+  <module>hibernate-jpamodelgen</module>
  </modules>
 </project>
