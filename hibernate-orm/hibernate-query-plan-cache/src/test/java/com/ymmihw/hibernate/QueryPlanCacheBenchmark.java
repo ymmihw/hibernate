@@ -83,6 +83,10 @@ public class QueryPlanCacheBenchmark {
     public void tearDownState() {
       log.info("State - Teardown");
       SessionFactory sessionFactory = session.getSessionFactory();
+      log.info("QueryPlanCacheHitCount is {}",
+          sessionFactory.getStatistics().getQueryPlanCacheHitCount());
+      log.info("QueryPlanCacheMissCount is {}",
+          sessionFactory.getStatistics().getQueryPlanCacheMissCount());
       session.close();
       sessionFactory.close();
       log.info("State - Teardown complete");
