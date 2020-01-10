@@ -3,11 +3,7 @@ package com.ymmihw.hibernate;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.Properties;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -129,15 +125,5 @@ public abstract class AbstractHibernateSpatialTest {
     shapeFactory.setSize(radius * 2);
     return shapeFactory.createCircle();
   }
-
-  public static Properties getProperties(String propertyFile) throws IOException {
-    Properties properties = new Properties();
-    URL propertiesURL = Thread.currentThread().getContextClassLoader().getResource(propertyFile);
-    try (FileInputStream inputStream = new FileInputStream(propertiesURL.getFile())) {
-      properties.load(inputStream);
-    }
-    return properties;
-  }
-
 
 }
