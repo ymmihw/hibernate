@@ -3,7 +3,7 @@ package com.ymmihw.hibernate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 import lombok.Getter;
 import lombok.Setter;
 
