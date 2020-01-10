@@ -1,12 +1,11 @@
 package com.ymmihw.hibernate;
 
-import com.vividsolutions.jts.geom.Point;
-import lombok.Getter;
-import lombok.Setter;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import com.vividsolutions.jts.geom.Point;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -17,7 +16,6 @@ public class PointEntity {
   @GeneratedValue
   private Long id;
 
-  @Column(columnDefinition = "BLOB")
   private Point point;
 
   @Override
