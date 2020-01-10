@@ -30,5 +30,6 @@
   <module>hibernate-batch</module>
   <module>hibernate-jpamodelgen</module>
   <module>hibernate-query-plan-cache</module>
+  <module>hibernate-spatial</module>
  </modules>
 </project>
