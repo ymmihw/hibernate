@@ -16,6 +16,10 @@ public class SessionFactoryCreator {
   public static SessionFactory getSessionFactory(String propertes)
       throws FileNotFoundException, IOException {
     Properties properties = getProperties(propertes);
+    return getSessionFactoryByProperties(properties);
+  }
+
+  public static SessionFactory getSessionFactoryByProperties(Properties properties) {
     ServiceRegistry serviceRegistry =
         new StandardServiceRegistryBuilder().applySettings(properties).build();;
     MetadataSources metadataSources = new MetadataSources(serviceRegistry);
@@ -28,7 +32,7 @@ public class SessionFactoryCreator {
     return metadata.getSessionFactoryBuilder().build();
   }
 
-  private static Properties getProperties(String propertes)
+  public static Properties getProperties(String propertes)
       throws IOException, FileNotFoundException {
     Properties properties = new Properties();
     URL propertiesURL = Thread.currentThread().getContextClassLoader().getResource(propertes);
