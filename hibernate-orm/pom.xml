@@ -40,6 +40,5 @@
   <module>hibernate-jpamodelgen</module>
   <module>hibernate-query-plan-cache</module>
   <module>hibernate-spatial</module>
-  <module>mysql-container</module>
  </modules>
 </project>
