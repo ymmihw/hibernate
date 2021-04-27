@@ -5,16 +5,15 @@ import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.ClassRule;
 import org.testcontainers.containers.MySQLContainer;
 
 public class HibernateSpatialMySQLTest extends AbstractHibernateSpatialTest {
-  @ClassRule
   public static MySQLContainer<?> container =
       new MySQLContainer<>("mysql:5.7.28").withPassword("123456");
 
   @Before
   public void setUp() throws IOException {
+    container.start();
     Properties properties =
         SessionFactoryCreator.getProperties("hibernate-spatial-mysql.properties");
     properties.setProperty("hibernate.connection.url",
