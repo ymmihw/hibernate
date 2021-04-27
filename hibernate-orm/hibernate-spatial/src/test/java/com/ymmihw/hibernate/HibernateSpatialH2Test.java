@@ -1,13 +1,13 @@
 package com.ymmihw.hibernate;
 
 import java.io.IOException;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import geodb.GeoDB;
 
 public class HibernateSpatialH2Test extends AbstractHibernateSpatialTest {
 
-  @Before
+  @BeforeEach
   public void setUp() throws IOException {
     session =
         SessionFactoryCreator.getSessionFactory("hibernate-spatial-h2.properties").openSession();
@@ -17,7 +17,7 @@ public class HibernateSpatialH2Test extends AbstractHibernateSpatialTest {
     });
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     transaction.rollback();
     session.close();

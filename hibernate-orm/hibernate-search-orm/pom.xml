@@ -19,7 +19,7 @@
   <dependency>
    <groupId>org.hibernate</groupId>
    <artifactId>hibernate-search-orm</artifactId>
-   <version>5.11.4.Final</version>
+   <version>5.11.8.Final</version>
   </dependency>
   <dependency>
    <groupId>org.apache.tomcat</groupId>
@@ -29,7 +29,7 @@
   <dependency>
    <groupId>com.google.guava</groupId>
    <artifactId>guava</artifactId>
-   <version>28.2-jre</version>
+   <version>${guava.version}</version>
   </dependency>
  </dependencies>
 </project>
