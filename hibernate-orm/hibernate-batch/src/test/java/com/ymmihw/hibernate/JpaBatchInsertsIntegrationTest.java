@@ -6,17 +6,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import com.ymmihw.hibernate.model.School;
 import com.ymmihw.hibernate.model.Student;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 @Transactional
 @ActiveProfiles("batchinserts")
@@ -87,7 +84,7 @@ public class JpaBatchInsertsIntegrationTest {
     }
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     entityManager.flush();
   }

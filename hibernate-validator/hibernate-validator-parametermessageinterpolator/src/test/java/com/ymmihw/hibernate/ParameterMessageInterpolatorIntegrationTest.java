@@ -7,14 +7,14 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class ParameterMessageInterpolatorIntegrationTest {
 
   private static Validator validator;
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() {
     ValidatorFactory validatorFactory = Validation.byDefaultProvider().configure()
         .messageInterpolator(new ParameterMessageInterpolator()).buildValidatorFactory();

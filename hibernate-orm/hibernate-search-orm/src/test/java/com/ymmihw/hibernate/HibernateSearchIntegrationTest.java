@@ -1,9 +1,9 @@
 package com.ymmihw.hibernate;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,24 +11,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.jpa.Search;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer.MethodName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 import com.ymmihw.hibernate.model.Product;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {HibernateSearchConfig.class},
-    loader = AnnotationConfigContextLoader.class)
+@SpringBootTest(classes = {HibernateSearchConfig.class})
 @Transactional
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodName.class)
 public class HibernateSearchIntegrationTest {
 
   @Autowired
@@ -39,7 +34,7 @@ public class HibernateSearchIntegrationTest {
 
   private List<Product> products;
 
-  @Before
+  @BeforeEach
   public void setupTestData() {
 
     products = Arrays.asList(

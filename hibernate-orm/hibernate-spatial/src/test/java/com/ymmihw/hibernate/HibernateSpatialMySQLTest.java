@@ -3,15 +3,15 @@ package com.ymmihw.hibernate;
 import java.io.IOException;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.testcontainers.containers.MySQLContainer;
 
 public class HibernateSpatialMySQLTest extends AbstractHibernateSpatialTest {
   public static MySQLContainer<?> container =
       new MySQLContainer<>("mysql:5.7.28").withPassword("123456");
 
-  @Before
+  @BeforeEach
   public void setUp() throws IOException {
     container.start();
     Properties properties =
@@ -24,7 +24,7 @@ public class HibernateSpatialMySQLTest extends AbstractHibernateSpatialTest {
     transaction = session.beginTransaction();
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     transaction.rollback();
     session.close();
