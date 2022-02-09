@@ -16,3 +16,4 @@ hibernate-fetchmode | [FetchMode in Hibernate](https://www.baeldung.com/hibernat
 Module | Article
 --|--
 hibernate-validator-parametermessageinterpolator | [Guide to ParameterMessageInterpolator](https://www.baeldung.com/hibernate-parametermessageinterpolator)
+hibernate-validator-annotation-processor | [Hibernate Validator Annotation Processor in Depth](https://www.baeldung.com/hibernate-validator-annotation-processor)
